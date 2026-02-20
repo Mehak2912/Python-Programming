@@ -1,0 +1,19 @@
+#list_as_queue
+
+from collections import deque
+queue=deque()
+while True:
+    action=input("Enqueue,Dequeue, or Quit:").lower()
+    if action=='enqueue':
+        item=input("Enter item:")
+        queue.append(item)
+        print("Queue:",list(queue))
+    elif action=="dequeue":
+        if queue:
+            dequeued=queue.popleft()
+            print("dequeued:",dequeued)
+            print("queued:",list(queue))
+        else:
+            print("Queue empty")
+    elif action=='quit':
+        break
